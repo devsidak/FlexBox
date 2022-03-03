@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.padding-box{
+    padding: 13px;
+}
+/* ---------------------- styles for rows ----------------- */
+.container {
+  display: flex;
+  height: 400px;
+  background-color: brown;
+  justify-content: space-evenly;
+  /* flex-wrap: wrap; */
+  align-items: center; /*vertical alignment along cros axis in flex direction row */
+}
+
+.item {
+  margin: 10px;
+  flex : 1 1 0; /* flex-grow: 1; flex-shrink: 1; flex-basis: 100px;  default value for basis:0*/
+  /* flex-basis: 300px; */
+  height: 100px;
+  border-radius: 12px;
+  background-color: antiquewhite;
+  border: 1px solid blue;
+  padding: 10px;
+  font-weight: bold;
+
+
+  /* introducing flex in flex-items */
+
+  display: flex;
+  justify-content: center;  
+  align-items: center;
+
+}
+
+/* how to align items individually*/
+
+/* 
+Trying Out Flex Grow Here, flex-basis sets the default min size of the flex-item and the flex-grow gives the ratio in which flex-items should grow on screen maximization 
+*/
+.container .item:nth-of-type(1) {
+  /* align-self: start; */
+  /* flex-basis: 300px; */
+  /* order: 2;
+  flex-grow: 2; */
+}
+.container .item:nth-of-type(2) {
+  /* align-self: center; */
+  /* order: 1;
+  flex-grow: 1; */
+}
+.container .item:nth-of-type(3) {
+  /* align-self: end; */
+  /* order: 3;
+  flex-grow: 1; */
+
+}  
+
+
+
+
+/* ------------------------- styles for columns ------------------------*/
+
+.container-column{
+    display: flex;
+    flex-direction: column;
+    height: 400px;
+    background-color: rgb(125, 58, 58);
+
+    /* Always on the Main axis */
+    justify-content: space-evenly;
+
+    /* Always on the Cross axis */
+    align-items: center; 
+  }
+  
+.container-column .item {
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    background-color: peru;
+    border: 1px solid #ccc;
+    padding: 10px;
+    font-weight: bold;
+  }
+  
+
+  /* 
+  
+  ------------ NOTE - ALIGN-ITEMS AND JUSTIFY-CONTENT USAGE; -------------
+    
+(main axis in flex direction column)(cross axis in flex direction row)
+                    |
+                    |
+            ________|_________  (cross axis in flex direction column) (main axis in flex direction row)
+                    |
+                    |
+  
+  Align-items: flex-start | flex-end | center | baseline | stretch) always work for alignment along cross axis
+  Justify-content: flex-start | flex-end | center | space-between | space-around) always work for alignment along main axis
+  
+  */
